@@ -4,68 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <nav>
+    <a href="Login page.html"></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <div class="logo">Ecommerce</div>
-            <ul class="nav-links">
-                <li>Home</li>
-                <li>Products</li>
-                <li>About</li>
-                <li>Contact</li>
-            </ul>
-            <div class="nav-actions">
-                <a href="#" class="login">→ Login</a>
-                <a href="#" class="register">+Register</a>
-                <a href="#" class="cart">Cart (0)</a>
+            <a class="navbar-brand" href="#">Ecommerce</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+                <a href="#" class="mx-2 text-dark">Home</a>
+                <a href="#" class="mx-2 text-dark">Products</a>
+                <a href="#" class="mx-2 text-dark">About</a>
+                <a href="#" class="mx-2 text-dark">Contact</a>
+            </div>
+            <div>
+                <button class="btn btn-outline-dark me-2">&#128274; Login</button>
+                <button class="btn btn-outline-dark me-2">&#128100; Register</button>
+                <button class="btn btn-outline-dark">&#128722; Cart (0)</button>
             </div>
         </div>
     </nav>
 
-    <section class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum facere doloremque veritatis odit similique
-                sequi. Odit amet fuga nam quam quasi facilis sed doloremque saepe sint perspiciatis explicabo totam vero quas
-                provident ipsam, veritatis nostrum velit quos recusandae est mollitia esse fugit dolore laudantium. Ex vel
-                explicabo earum unde eligendi autem praesentium, doloremque distinctio nesciunt porro tempore quis eaque
-                labore voluptatibus ea necessitatibus exercitationem tempora molestias. Ad consequuntur veniam sequi ullam
-                tempore vel tenetur soluta dolore sunt maxime aliquam corporis est, quo saepe dolorem optio minus sint nemo
-                totam dolorum! Reprehenderit delectus expedita a alias nam recusandae illo debitis repellat libero, quasi
-                explicabo molestiae saepe, dolorem tempore itaque eveniet quam dignissimos blanditiis excepturi harum
-                numquam vel nihil? Ipsum</p>
-        </div>
-    </section>
+    <header class="jumbotron text-center bg-dark text-white p-5">
+        <h1>New Season Arrivals</h1>
+        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+    </header>
 
-    <section class="products">
-        <div class="container">
-            <h2>Our Products</h2>
-            <div class="product-categories">
-                <div class="product-category">
-                    <img src="pexels-photo-298863.jpeg" alt="Men's Clothing">
-                    <h3>Men's Clothing</h3>
-                </div>
-                <div class="product-category">
-                    <img src="pexels-photo-7679720.jpeg" alt="Women's Clothing">
-                    <h3>Women's Clothing</h3>
-                </div>
-                <div class="product-category">
-                    <img src="pexels-photo-1927259.webp" alt="Jewelry">
-                    <h3>Jewelry</h3>
-                </div>
-                <div class="product-category">
-                    <img src="pexels-photo-356056.jpeg" alt="Electronics">
-                    <h3>Electronics</h3>
+    <div class="container my-5">
+        <h2 class="text-center">Latest Products</h2>
+        <div class="text-center my-3">
+            <button class="btn btn-outline-secondary">All</button>
+            <button class="btn btn-outline-secondary">Men's Clothing</button>
+            <button class="btn btn-outline-secondary">Women's Clothing</button>
+            <button class="btn btn-outline-secondary">Jewelry</button>
+            <button class="btn btn-outline-secondary">Electronics</button>
+        </div>
+        <div class="row">
+            <!-- Sample Product Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/200" class="card-img-top" alt="Product">
+                    <div class="card-body">
+                        <h5 class="card-title">Product Name</h5>
+                        <p class="card-text">Short product description goes here.</p>
+                        <p class="text-primary">$19.99</p>
+                        <button class="btn btn-primary">Details</button>
+                        <button class="btn btn-success">Add to Cart</button>
+                    </div>
                 </div>
             </div>
+            <!-- Repeat similar product cards here -->
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <p>Made with  by AchieversIT</p>
+    <footer class="text-center py-4 bg-light">
+        <p>Made with ❤️ by AchievesIT</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
