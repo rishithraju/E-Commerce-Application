@@ -14,13 +14,6 @@ async function fetchData() {
 }
 fetchData();
 
-// for (const key in object) {
-//     if (Object.prototype.hasOwnProperty.call(object, key)) {
-//         const element = object[key];
-
-//     }
-// }
-
 function createcards(source) {
   var image = "";
   source.forEach((currObj) => {
@@ -90,19 +83,3 @@ Electronics.addEventListener("click", () => {
   let Electronics = data1.filter((ele) => ele.category == "electronics");
   createcards(Electronics);
 });
-
-// setting data into localstorage
-// localStorage.setItem("source",)
-
-// ----for details button
-// let detaBtn = document.getElementsByClassName("details")
-
-//   detaBtn.addEventListener("click",(e)=>{
-
-//         console.log("the button wass  clicked!");
-
-//   });
-
-// let dbtn = ${data1.title}
-
-// console.log(dbtn);
