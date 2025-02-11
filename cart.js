@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   const cartItems = document.querySelectorAll(".list-group-item");
   const totalAmountElement = document.querySelector(".float-end.fw-bold"); // Total price element
-  const cartCountElement = document.querySelector("a[href='cart.html']"); // Cart count in navbar
+  const cartCountElement = document.querySelector("cart.html"); // Cart count in navbar
 
   function updateTotal() {
     let total = 0;

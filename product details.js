@@ -1,5 +1,5 @@
-let rowcard = document.querySelector(".row");
-console.log(rowcard);
+let row = document.querySelector(".row");
+console.log(row);
 
 let data1 = [];
 
@@ -7,7 +7,12 @@ async function fetchData() {
   const response = await fetch("https://fakestoreapi.com/products");
   const data = await response.json();
   console.log(data);
-  createcards(data);
+  let id = localStorage.getItem("id");
+  if (id == details) {
+    createcards(data);
+  } else {
+    details(data, id);
+  }
   data.map((ele) => {
     data1.push(ele);
   });
@@ -34,6 +39,15 @@ function createcards(source) {
   });
   rowcard.innerHTML = image;
 
+  // let details12 = document.querySelector(".productdetailbtn1")
+
+  // function clickdetail(data){
+  //    let data2 = data.filter((ele)=>{return ele. id==id})
+  //      console.log(data2);
+
+  // }
+  // clickdetail(data)
+
   let detailsBtn = document.querySelectorAll(".details");
 
   detailsBtn.forEach((deBtn) => {
@@ -44,6 +58,30 @@ function createcards(source) {
     });
   });
 }
+
+function clickdetail(data) {
+  let y = `
+       "<div class="card  col-4" style="width: 18rem; justify-content:center ;display:flex; margin:7px;text-align: center;">
+      <img src="${currObj.image}" class="card-img-top" alt="iamges is not getting">
+      <div class="card-body">
+        <h5 class="card-title" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.title}</h5>
+        <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.description}</p><hr>
+        <p>${currObj.price} </p>
+      </div><hr>
+      <div class="card-body">
+       <button type="button" class="btn btn-dark details "data-id="${currObj.id}">Details</button>
+       <button type="button" class="btn btn-dark">Add to Cart</button>
+      </div>
+    </div>`;
+
+  let data2 = data.filter((ele) => {
+    return ele.id == id;
+  });
+  console.log(data2);
+}
+image += y;
+
+clickdetail(data);
 
 // for all button
 let allbtn = document.getElementById("all");
