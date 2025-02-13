@@ -60,24 +60,25 @@ function displayDetails(data, id) {
         <img src="${product.image}" class="card-img-top" alt="Image not available">
     </div>
 
-        <div class="card-body">
-            <h1>${product.category}</h1>
-            <h3 class="card-title" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${product.title}</h3>
+        <div class="card-body" style="text-align:justify;">
+            <h4 style="color:gray">${product.category}</h4>
+            <h3 class="card-title" style=" text-overflow:ellipsis;style="text-align:justify;>${product.title}</h3>
             <br>
             <p>${product.rating.rate}<ion-icon name="star"></ion-icon></p>
+
+            <div style="text-align:justify; >
             <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${product.description}</p>
+            </div>
+
             <br>
             <p><strong style="font-size:28px;">$${product.price}</strong></p>
-            <button type="button" class="btn btn-dark" style="margin:15px; width:3%">Dark</button>
-            <button type="button" class="btn btn-dark"style="width:3%">Dark</button>
-        </div>
-
-        <div class="card-body">
-            <button type="button" class="btn btn-dark">Add to Cart</button>
-        </div>`;
-
+            <button type="button" class="btn btn-dark" >Add to Cart</button>
+            <button type="button" class="btn btn-dark" >Go to Cart</button>
+        </div> 
+        `;
     document.querySelector(".detail").innerHTML = detailHTML;
 }
+
 
 // For all button
 let allbtn = document.getElementById("all");
