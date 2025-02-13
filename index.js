@@ -17,19 +17,25 @@ fetchData();
 function createcards(source) {
   var image = "";
   source.forEach((currObj) => {
-    let x = `
-       "<div class="card  col-4" style="width: 18rem; justify-content:center ;display:flex; margin:7px;text-align: center;">
-      <img src="${currObj.image}" class="card-img-top" alt="iamges is not getting">
-      <div class="card-body">
-        <h5 class="card-title" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.title}</h5>
-        <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.description}</p><hr>
-        <p>${currObj.price} </p>
-      </div><hr>
-      <div class="card-body">
-       <button type="button" class="btn btn-dark details "data-id="${currObj.id}">Details</button>
-       <button type="button" class="btn btn-dark">Add to Cart</button>
-      </div>
-    </div>`;
+    let x = ` <div style="border:1px solid grey; width:350px; height: 520px;text-align: center;">
+    <img style="width: 300px; height: 300px;" src="${currObj.image}" alt="img1">
+    <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+    ${currObj.title}
+        Mens Casual Premium Slim Fit T-Shirts
+    </h4>
+    <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+    ${currObj.description}
+        Slim-fitting style,contrast raglan long sleeve, three-button
+    </p><hr>
+    <p style="text-align: center;">${currObj.price}</p><hr>
+
+    <button style="background-color: black;color: whitesmoke ;padding: 10px; border-radius: 3px;text-align: center;">Details</button>
+    <button style="background-color: black;color: whitesmoke;padding: 10px; border-radius: 3px;text-align: center;">Add to Cart</button>
+    
+ </div>
+
+    `
+       
     image += x;
   });
   rowcard.innerHTML = image;
