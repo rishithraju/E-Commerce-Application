@@ -29,13 +29,13 @@ function createcards(source) {
     </p><hr>
     <p style="text-align: center;">${currObj.price}</p><hr>
 
-    <button style="background-color: black;color: whitesmoke ;padding: 10px; border-radius: 3px;text-align: center;">Details</button>
+    <button class="btn btn-dark details" style="background-color: black;color: whitesmoke ;padding: 10px; border-radius: 3px;text-align: center;">Details</button>
     <button style="background-color: black;color: whitesmoke;padding: 10px; border-radius: 3px;text-align: center;">Add to Cart</button>
     
  </div>
 
-    `
-       
+    `;
+
     image += x;
   });
   rowcard.innerHTML = image;

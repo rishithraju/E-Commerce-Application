@@ -1,7 +1,7 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Select all quantity buttons
+ 
 
   let data1 = [];
 
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
   localStorage.setItem("cart",JSON.stringify(data))
  
-    // createcards(data);
+   
     data.map((ele) => {
       data1.push(ele);
     });
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
  
   
   const cartItems = document.querySelectorAll(".list-group-item");
-  const totalAmountElement = document.querySelector(".float-end.fw-bold"); // Total price element
-  const cartCountElement = document.querySelector("cart.html"); // Cart count in navbar
+  const totalAmountElement = document.querySelector(".float-end.fw-bold"); 
+  const cartCountElement = document.querySelector("cart.html"); 
 
   function updateTotal() {
     let total = 0;
@@ -31,14 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
     cartItems.forEach((item) => {
       const price = parseFloat(
         item.querySelector("div").innerText.split("× $")[1]
-      ); // Extract price
-      const quantity = parseInt(item.querySelector(".mx-2").innerText); // Extract quantity
+      ); 
+      const quantity = parseInt(item.querySelector(".mx-2").innerText);
       total += price * quantity;
       totalItems += quantity;
     })
 
-    totalAmountElement.innerText = `$${total.toFixed(2)}`; // Update total price
-    cartCountElement.innerHTML = `&#128722; Cart (${totalItems})`; // Update cart count
+    totalAmountElement.innerText = `$${total.toFixed(2)}`; 
+    cartCountElement.innerHTML = `&#128722; Cart (${totalItems})`; 
   }
 
   cartItems.forEach((item) => {
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (quantity > 1) {
         quantitySpan.innerText = quantity - 1;
       } else {
-        item.remove(); // Remove item if quantity is 0
+        item.remove(); 
       }
       updateTotal();
     });
@@ -63,5 +63,5 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   })
 
-  updateTotal(); // Initialize the total price on page load
+  updateTotal(); 
 })

@@ -9,7 +9,7 @@ async function fetchData() {
     console.log(data);
     let id = localStorage.getItem("id");
 
-    if (id == null) {
+    if (id == null || id === 'undefined') {
         createcards(data);
     } else {
         displayDetails(data, id);
@@ -22,6 +22,7 @@ fetchData();
 
 var image = "";
 function createcards(source) {
+    image = ""; // Reset the image variable to prevent duplication
     source.forEach((currObj) => {
         let x = ` 
         <div style="border:1px solid grey; width:350px; height: 520px;text-align: center;">
@@ -50,17 +51,30 @@ function createcards(source) {
 
 function displayDetails(data, id) {
     let product = data.find(ele => ele.id == id);
+    if (!product) {
+        console.error(`Product with id ${id} not found`);
+        return;
+    }
     let detailHTML = `
-        <div class="card col-4" style= "justify-content:center; display:flex; margin:7px;text-align: center;">
+    <div class="card col-4" style="width: 18rem; justify-content:center; display:flex; margin:7px;text-align: center;">
         <img src="${product.image}" class="card-img-top" alt="Image not available">
-         </div>
+    </div>
 
-         <div class="card-body" display:flex;>
-            <h5 class="card-title" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${product.title}</h5>
-            
-            <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${product.description}</p><hr>
-            <p>${product.price}</p>
-        </div`;
+        <div class="card-body">
+            <h1>${product.category}</h1>
+            <h3 class="card-title" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${product.title}</h3>
+            <br>
+            <p>${product.rating.rate}<ion-icon name="star"></ion-icon></p>
+            <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${product.description}</p>
+            <br>
+            <p><strong style="font-size:28px;">$${product.price}</strong></p>
+            <button type="button" class="btn btn-dark" style="margin:15px; width:3%">Dark</button>
+            <button type="button" class="btn btn-dark"style="width:3%">Dark</button>
+        </div>
+
+        <div class="card-body">
+            <button type="button" class="btn btn-dark">Add to Cart</button>
+        </div>`;
 
     document.querySelector(".detail").innerHTML = detailHTML;
 }
