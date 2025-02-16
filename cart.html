@@ -20,7 +20,7 @@
             <div>
                 <a href="Login.html"><button class="btn btn-outline-dark me-2">&#128274; Login</button></a>
                 <a href="Register.html"><button class="btn btn-outline-dark me-2">&#128100; Register</button></a>
-                <a href="cart.html"><button class="btn btn-outline-dark">&#128722; Cart (0)</button></a>
+                <a href="cart.html"><button class="btn btn-outline-dark cart-count">&#128722; Cart (0)</button></a>
              </div>
         </div>
     </nav>
@@ -32,67 +32,8 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header fw-bold">Item List</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex align-items-center">
-                            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" class="me-3" alt="Product Image" width="50" height="50">
-                            <div class="me-auto">
-                                <strong>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</strong><br>
-                                1 × $109.95
-                            </div>
-                            <button class="btn btn-outline-secondary btn-sm">-</button>
-                            <span class="mx-2">1</span>
-                            <button class="btn btn-outline-secondary btn-sm">+</button>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" class="me-3" alt="Product Image" width="50" height="50">
-                            <div class="me-auto">
-                                <strong>Mens Cotton Jacket</strong><br>
-                                1 × $55.99
-                            </div>
-                            <button class="btn btn-outline-secondary btn-sm">-</button>
-                            <span class="mx-2">1</span>
-                            <button class="btn btn-outline-secondary btn-sm">+</button>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <img src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg" class="me-3" alt="Product Image" width="50" height="50">
-                            <div class="me-auto">
-                                <strong>John Hardy Women's Legends Naga Bracelet</strong><br>
-                                1 × $695
-                            </div>
-                            <button class="btn btn-outline-secondary btn-sm">-</button>
-                            <span class="mx-2">1</span>
-                            <button class="btn btn-outline-secondary btn-sm">+</button>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg" class="me-3" alt="Product Image" width="50" height="50">
-                            <div class="me-auto">
-                                <strong>Solid Gold Petite Micropave</strong><br>
-                                1 × $168
-                            </div>
-                            <button class="btn btn-outline-secondary btn-sm">-</button>
-                            <span class="mx-2">1</span>
-                            <button class="btn btn-outline-secondary btn-sm">+</button>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <img src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg" class="me-3" alt="Product Image" width="50" height="50">
-                            <div class="me-auto">
-                                <strong>Pierced Owl Rose Gold Plated Stainless Steel Double</strong><br>
-                                1 × $10.99
-                            </div>
-                            <button class="btn btn-outline-secondary btn-sm">-</button>
-                            <span class="mx-2">1</span>
-                            <button class="btn btn-outline-secondary btn-sm">+</button>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <img src="https://fakestoreapi.com/img/71kWymZ+UvL._AC_UL640_QL65_ML3_.jpg" class="me-3" alt="Product Image" width="50" height="50">
-                            <div class="me-auto">
-                                <strong>Silicon Power 256GB SSD</strong><br>
-                                1 × $109
-                            </div>
-                            <button class="btn btn-outline-secondary btn-sm">-</button>
-                            <span class="mx-2">1</span>
-                            <button class="btn btn-outline-secondary btn-sm">+</button>
-                        </li>
+                    <ul class="list-group list-group-flush" id="cart-items-list">
+                        <!-- Dynamic cart items will be added here -->
                     </ul>
                 </div>
             </div>
@@ -101,10 +42,10 @@
                 <div class="card">
                     <div class="card-header fw-bold">Order Summary</div>
                     <div class="card-body">
-                        <p>Products (0) <span class="float-end">$0</span></p>
-                        <p>Shipping <span class="float-end">$30</span></p>
+                        <p>Products (<span class="cart-count">0</span>) <span class="float-end">$0</span></p>
+                        <p>Shipping <span class="float-end">$0</span></p>
                         <hr>
-                        <p><strong>Total amount</strong> <span class="float-end fw-bold">$1179</span></p>
+                        <p><strong>Total amount</strong> <span class="float-end fw-bold total-amount">$1179</span></p>
                         <button class="btn btn-dark w-100">Go to checkout</button>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ fetchData();
 function createcards(source) {
   var image = "";
   source.forEach((currObj) => {
-    let x = ` <div style="border:1px solid grey; width:350px; height: 520px;text-align: center;">
+    let x = ` <div style="border:1px solid grey; width:325px; height: 520px;text-align: center;">
     <img style="width: 300px; height: 300px;" src="${currObj.image}" alt="img1">
     <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
     ${currObj.title}
@@ -30,7 +30,7 @@ function createcards(source) {
     <p style="text-align: center;">${currObj.price}</p><hr>
 
     <button class="btn btn-dark details" style="background-color: black;color: whitesmoke ;padding: 10px; border-radius: 3px;text-align: center;">Details</button>
-    <button style="background-color: black;color: whitesmoke;padding: 10px; border-radius: 3px;text-align: center;">Add to Cart</button>
+    <button class="btn btn-dark details" style="background-color: black;color: whitesmoke;padding: 10px; border-radius: 3px;text-align: center;">Add to Cart</button>
     
  </div>
 
