@@ -22,18 +22,17 @@ fetchData();
 
 var image = "";
 function createcards(source) {
-  image = ""; // Reset the image variable to prevent duplication
+  image = ""; 
   source.forEach((currObj) => {
     let x = ` 
-        <div style="border:1px solid grey; width:350px; height: 520px;text-align: center;">
-            <img style="width: 300px; height: 300px;" src="${currObj.image}" alt="img1">
-            <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">${currObj.title}</h4>
-            <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">${currObj.description}</p><hr>
-            <p style="text-align: center;">${currObj.price}</p><hr>
+        <div style="border:1px solid grey; width:275px; height:480px; text-align:center;">
+            <img style="width:250px; height:275px;" src="${currObj.image}" alt="img1">
+            <h4 style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.title}</h4>
+            <p style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.description}</p><hr>
+            <p style="text-align:center;">${currObj.price}</p><hr>
 
-            <button style="background-color: black;color: whitesmoke ;padding: 10px; border-radius: 3px;text-align: center;" class="details" data-id="${currObj.id}">Details</button>
-           
-            <button style="background-color: black;color: whitesmoke;padding: 10px; border-radius: 3px;text-align: center;" class="add-to-cart" data-id="${currObj.id}">Add to Cart</button>
+            <button style="background-color:black; color:whitesmoke ; padding:8px; border-radius:4px; text-align:center;" class="details" data-id="${currObj.id}">Details</button>
+            <button style="background-color:black; color:whitesmoke; padding:8px; border-radius:4px; text-align:center;" class="add-to-cart" data-id="${currObj.id}">Add to Cart</button>
         </div>
         `;
     image += x;
@@ -84,14 +83,14 @@ function displayDetails(data, id) {
     <div class="card col-4" style="width: 18rem; justify-content:center; display:flex; margin:7px;text-align: center;">
         <img src="${product.image}" class="card-img-top" alt="Image not available">
     </div>
-
-        <div class="card-body" style="text-align:justify;">
+        
+         <div class="card-body" style="text-align:justify;">
             <h4 style="color:gray">${product.category}</h4>
             <h3 class="card-title" style=" text-overflow:ellipsis;style="text-align:justify;>${product.title}</h3>
             <br>
             <p>${product.rating.rate}<ion-icon name="star"></ion-icon></p>
 
-            <div style="text-align:justify; >
+            <div style="text-align:justify;>
             <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${product.description}</p>
             </div>
 
@@ -99,7 +98,7 @@ function displayDetails(data, id) {
             <p><strong style="font-size:28px;">$${product.price}</strong></p>
             <button type="button" class="btn btn-dark add-to-cart" data-id="${product.id}">Add to Cart</button>
             <a href="cart.html" class="btn btn-dark">Go to Cart</a>
-        </div> 
+        </div>
         `;
   document.querySelector(".detail").innerHTML = detailHTML;
 
@@ -110,27 +109,27 @@ function displayDetails(data, id) {
   });
 }
 
-// For all button
+
 let allbtn = document.getElementById("all");
 allbtn.addEventListener("click", () => {
   createcards(data1);
 });
 
-// For men's button
+
 let men = document.getElementById("men");
 men.addEventListener("click", () => {
   let menProducts = data1.filter((ele) => ele.category == "men's clothing");
   createcards(menProducts);
 });
 
-// For women's button
+
 let women = document.getElementById("women");
 women.addEventListener("click", () => {
   let womenProducts = data1.filter((ele) => ele.category == "women's clothing");
   createcards(womenProducts);
 });
 
-// For jewelry button
+
 let jewelery = document.getElementById("jewelery");
 jewelery.addEventListener("click", () => {
   let jewelryProducts = data1.filter((ele) => ele.category == "jewelery");
