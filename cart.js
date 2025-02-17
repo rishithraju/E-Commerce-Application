@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
 
       <button class="btn btn-outline-secondary btn-sm minus-btn">-</button>
-      <span class="mx-2 quantity">${item.quantity}</span>
+      <span class="mx-2 quantity">${item.quantity}</span> 
       <button class="btn btn-outline-secondary btn-sm plus-btn">+</button>
     `;
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector(".products-total").innerText = `$${total.toFixed(2)}`;
     document.querySelector(".shipping-cost").innerText = `$${shippingCost.toFixed(2)}`;
-    document.querySelector(".products-count").innerText = totalItems;
+    document.querySelector(".cart-count").innerText = totalItems;
   }
 
   function updateCartInLocalStorage() {
