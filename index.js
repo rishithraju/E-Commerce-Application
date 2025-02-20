@@ -12,7 +12,7 @@ async function fetchData() {
     data1.push(ele);
   });
 }
-fetchData();
+fetchData(); 
 
 function createcards(source) {
   var image = "";

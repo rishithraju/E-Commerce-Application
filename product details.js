@@ -33,8 +33,7 @@ function createcards(source) {
 
             <button style="background-color:black; color:whitesmoke ; padding:8px; border-radius:4px; text-align:center;" class="details" data-id="${currObj.id}">Details</button>
             <button style="background-color:black; color:whitesmoke; padding:8px; border-radius:4px; text-align:center;" class="add-to-cart" data-id="${currObj.id}">Add to Cart</button>
-        </div>
-        `;
+        </div>`;
     image += x;
   });
   row.innerHTML = image;
