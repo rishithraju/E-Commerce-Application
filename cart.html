@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light p-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Ecommerce</a>
+            <div>
+                <a href="index.html" class="mx-2 text-dark">Home</a>
+                <a href="Product.html" class="mx-2 text-dark">Products</a>
+                <a href="About Us.html" class="mx-2 text-dark">About</a>
+                <a href="Contact us.html" class="mx-2 text-dark">Contact</a>
+            </div>
+            <div>
+                <a href="Login.html"><button class="btn btn-outline-dark me-2">&#128274; Login</button></a>
+                <a href="Register.html"><button class="btn btn-outline-dark me-2">&#128100; Register</button></a>
+                <a href="cart.html"><button class="btn btn-outline-dark cart-count">&#128722; Cart (0)</button></a>
+             </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        <h2 class="text-center">Cart</h2>
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header fw-bold">Item List</div>
+                    <ul class="list-group list-group-flush" id="cart-items-list">
+                       
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header fw-bold">Order Summary</div>
+
+                    <div class="card-body">
+                        <p>Products <span class="float-end products-total">$0</span></p>
+                        <p>Shipping <span class="float-end shipping-cost">$30</span></p>
+                        <hr>
+                        <p><strong>Total amount</strong> <span class="float-end fw-bold total-amount">$30</span></p>
+                        <button class="btn btn-dark w-100">Go to checkout</button>
+                      </div>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-5">
+        <p>Made by Rishith Varma</a></p>
+    </footer>
+    <script src="./cart.js"></script> 
+</body>
+</html>
